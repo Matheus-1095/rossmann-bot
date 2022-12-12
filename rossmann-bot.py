@@ -40,7 +40,7 @@ def load_dataset(store_id):
     df_test = pd.merge(df10, df_store, how='left', on='Store')
 
     # Choose store for prediction
-    df_test = df_test[df_test['Store'].isin([store_id])]
+    df_test = df_test[df_test['Store'] == store_id]
 
     if not df_test.empty:
         #remove closed days 
